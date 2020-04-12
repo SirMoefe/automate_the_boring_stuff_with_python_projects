@@ -16,4 +16,4 @@ for experimentNumber in range(10000):
     print(flip_list)
 
 
-#print("Chance of streake: %s%%" % (numberOfStreaks / 100))
+print("Chance of streake: %s%%" % (numberOfStreaks / 100))
