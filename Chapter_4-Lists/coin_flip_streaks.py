@@ -17,7 +17,7 @@ for experimentNumber in range(10000):
             flip_list.append("T")
 
     for value in flip_list:
-        if current == None:
+        if current is None:
             current = value
             counter += 1
         else:
@@ -31,6 +31,5 @@ for experimentNumber in range(10000):
         if counter == 6:
             numberOfStreaks += 1
             counter = 0
-
 
 print("Chance of streake: %s%%" % (numberOfStreaks / 100))

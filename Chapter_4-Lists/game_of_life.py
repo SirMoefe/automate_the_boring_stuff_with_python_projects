@@ -49,7 +49,8 @@ while True:
             if currentCells[rightCoord][belowCoord] == "#":
                 numNeighbors += 1
 
-            if currentCells[x][y] == "#" and (numNeighbors == 2 or numNeighbors == 3):
+            if currentCells[x][y] == "#" and (numNeighbors == 2
+                                              or numNeighbors == 3):
                 nextCells[x][y] = "#"
             elif currentCells[x][y] == " " and numNeighbors == 3:
                 nextCells[x][y] = "#"
