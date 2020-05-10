@@ -6,7 +6,7 @@ testBoard = {
     "2g": "bbishop",
     "5h": "bqueen",
     "8e": "wking",
-    "3f": "bqueen"
+    "9f": "wbishop"
 }
 
 
@@ -18,7 +18,7 @@ def isValidChessBoard(board):
         print("One side has no king...")
         return False
 
-    # Check if the amount of figures and their placements on the field are ok
+    # Check if the amount of pieces and their placements on the field are ok
 
     validation = {"wking": 1, "bking": 1, "wqueen": 1, "bqueen": 1, "wbishop": 2,
                   "bbishop": 2, "wrook": 2, "brook": 2, "wknight": 2, "bknight": 2, "wpawn": 8, "bpawn": 8}
@@ -37,64 +37,78 @@ def isValidChessBoard(board):
 
     letter_locations = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
-    for location, figure in board.items():
+    for location, piece in board.items():
 
         if location[-1] in letter_locations and int(location[0]) in range(1, 9):
             pass
         else:
             print("Location not on the board")
             return False
-
-        if figure == "wking":
-            wking += 1
-            if wking > validation.get(figure):
-                return False
-        elif figure == "bking":
-            bking += 1
-            if bking > validation.get(figure):
-                return False
-        elif figure == "wpawn":
-            wpawn += 1
-            if wpawn > validation.get(figure):
-                return False
-        elif figure == "bpawn":
-            bpawn += 1
-            if bpawn > validation.get(figure):
-                return False
-        elif figure == "wqueen":
-            wqueen += 1
-            if wqueen > validation.get(figure):
-                return False
-        elif figure == "bqueen":
-            bqueen += 1
-            if bqueen > validation.get(figure):
-                return False
-        elif figure == "wknight":
-            wknight += 1
-            if wknight > validation.get(figure):
-                return False
-        elif figure == "bknight":
-            bknight += 1
-            if bknight > validation.get(figure):
-                return False
-        elif figure == "wbishop":
-            wbishop += 1
-            if wbishop > validation.get(figure):
-                return False
-        elif figure == "bbishop":
-            bbishop += 1
-            if bbishop > validation.get(figure):
-                return False
-        elif figure == "wrook":
-            wrook += 1
-            if wrook > validation.get(figure):
-                return False
-        elif figure == "brook":
-            brook += 1
-            if brook > validation.get(figure):
-                return False
+        if piece not in validation:
+            print("Unknown piece on the field")
+            return False
         else:
-            return True
+            if piece == "wking":
+                wking += 1
+                if wking > validation.get(piece):
+                    print("Too many white kings on the board")
+                    return False
+            elif piece == "bking":
+                bking += 1
+                if bking > validation.get(piece):
+                    print("Too many white kings on the board")
+                    return False
+            elif piece == "wpawn":
+                wpawn += 1
+                if wpawn > validation.get(piece):
+                    print("Too many white kings on the board")
+                    return False
+            elif piece == "bpawn":
+                bpawn += 1
+                if bpawn > validation.get(piece):
+                    print("Too many white kings on the board")
+                    return False
+            elif piece == "wqueen":
+                wqueen += 1
+                if wqueen > validation.get(piece):
+                    print("Too many white queens on the board")
+                    return False
+            elif piece == "bqueen":
+                bqueen += 1
+                if bqueen > validation.get(piece):
+                    print("Too many black queens on the board")
+                    return False
+            elif piece == "wknight":
+                wknight += 1
+                if wknight > validation.get(piece):
+                    print("Too many white knights on the board")
+                    return False
+            elif piece == "bknight":
+                bknight += 1
+                if bknight > validation.get(piece):
+                    print("Too many black knights on the board")
+                    return False
+            elif piece == "wbishop":
+                wbishop += 1
+                if wbishop > validation.get(piece):
+                    print("Too many white bishops on the board")
+                    return False
+            elif piece == "bbishop":
+                bbishop += 1
+                if bbishop > validation.get(piece):
+                    print("Too many black bishops on the board")
+                    return False
+            elif piece == "wrook":
+                wrook += 1
+                if wrook > validation.get(piece):
+                    print("Too many white brooks on the board")
+                    return False
+            elif piece == "brook":
+                brook += 1
+                if brook > validation.get(piece):
+                    print("Too many black brooks on the board")
+                    return False
+    return True
 
 
 print(isValidChessBoard(testBoard))
