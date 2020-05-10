@@ -6,7 +6,7 @@ testBoard = {
     "2g": "bbishop",
     "5h": "bqueen",
     "8e": "wking",
-    "3f": "wking"
+    "3f": "bqueen"
 }
 
 
@@ -35,11 +35,11 @@ def isValidChessBoard(board):
     wpawn = 0
     bpawn = 0
 
-    l_locations = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    letter_locations = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
     for location, figure in board.items():
 
-        if location[-1] in l_locations and int(location[0]) in range(1, 9):
+        if location[-1] in letter_locations and int(location[0]) in range(1, 9):
             pass
         else:
             print("Location not on the board")
@@ -93,11 +93,8 @@ def isValidChessBoard(board):
             brook += 1
             if brook > validation.get(figure):
                 return False
-
-    if wking < 1 or wking > 1 or bking < 1 or bking > 1 or wqueen > 1 or bqueen > 1 or wbishop > 2 or bbishop > 2 or wrook > 2 or brook > 2 or wknight > 2 or bknight > 2 or wpawn > 8 or bpawn > 8:
-        return False
-    else:
-        return True
+        else:
+            return True
 
 
 print(isValidChessBoard(testBoard))
