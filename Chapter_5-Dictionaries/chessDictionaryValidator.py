@@ -20,8 +20,20 @@ def isValidChessBoard(board):
 
     # Check if the amount of pieces and their placements on the field are ok
 
-    validation = {"wking": 1, "bking": 1, "wqueen": 1, "bqueen": 1, "wbishop": 2,
-                  "bbishop": 2, "wrook": 2, "brook": 2, "wknight": 2, "bknight": 2, "wpawn": 8, "bpawn": 8}
+    validation = {
+        "wking": 1,
+        "bking": 1,
+        "wqueen": 1,
+        "bqueen": 1,
+        "wbishop": 2,
+        "bbishop": 2,
+        "wrook": 2,
+        "brook": 2,
+        "wknight": 2,
+        "bknight": 2,
+        "wpawn": 8,
+        "bpawn": 8
+    }
     wking = 0
     bking = 0
     wqueen = 0
@@ -39,7 +51,8 @@ def isValidChessBoard(board):
 
     for location, piece in board.items():
 
-        if location[-1] in letter_locations and int(location[0]) in range(1, 9):
+        if location[-1] in letter_locations and int(location[0]) in range(
+                1, 9):
             pass
         else:
             print("Location not on the board")
