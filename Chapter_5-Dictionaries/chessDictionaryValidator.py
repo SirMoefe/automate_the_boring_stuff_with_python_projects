@@ -50,16 +50,18 @@ def isValidChessBoard(board):
     letter_locations = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
     for location, piece in board.items():
-
+        # Checking if location is valid
         if location[-1] in letter_locations and int(location[0]) in range(
                 1, 9):
             pass
         else:
             print("Location not on the board")
             return False
+        # Checking if piece is valid
         if piece not in validation:
             print("Unknown piece on the field")
             return False
+        # Checking the amount of pieces for each side and if it's valid
         else:
             if piece == "wking":
                 wking += 1
@@ -69,17 +71,17 @@ def isValidChessBoard(board):
             elif piece == "bking":
                 bking += 1
                 if bking > validation.get(piece):
-                    print("Too many white kings on the board")
+                    print("Too many black kings on the board")
                     return False
             elif piece == "wpawn":
                 wpawn += 1
                 if wpawn > validation.get(piece):
-                    print("Too many white kings on the board")
+                    print("Too many white pawns on the board")
                     return False
             elif piece == "bpawn":
                 bpawn += 1
                 if bpawn > validation.get(piece):
-                    print("Too many white kings on the board")
+                    print("Too many black pawns on the board")
                     return False
             elif piece == "wqueen":
                 wqueen += 1
