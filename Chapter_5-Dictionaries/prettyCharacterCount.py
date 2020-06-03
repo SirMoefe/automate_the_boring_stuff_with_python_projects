@@ -1,6 +1,6 @@
 import pprint
 
-message = "It was a bright cold day in April, an the clocks were striking thirteen."
+message = input("What should I count for you?: \n")
 count = {}
 
 for character in message:

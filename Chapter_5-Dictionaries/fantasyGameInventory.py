@@ -19,7 +19,8 @@ def addToInventory(inventory, lootToAdd):
     return inventory
 
 
-inv = {'gold coin': 42, 'rope': 1}
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = addToInventory(inv, dragonLoot)
-displayInventory(inv)
+if __name__ == "__main__":
+    inv = {'gold coin': 42, 'rope': 1}
+    dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+    inv = addToInventory(inv, dragonLoot)
+    displayInventory(inv)
