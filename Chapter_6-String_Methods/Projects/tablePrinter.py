@@ -4,8 +4,13 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
 
 
 def printTable(table):
-    for value in table:
-        print(value)
+    #Create Table to figure out the longest string in each table
+    columWidth = [0] * len(table)
+    for y in range(len(table)):
+        for x in table[y]:
+            if len(x) > columWidth[y]:
+                columWidth[y] = len(x)
+    print(columWidth)
 
 
 printTable(tableData)
